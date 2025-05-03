@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Modulo</title>
+</head>
+<body>
+   <form>
+    <h1>Calculatrice</h1>
+    <!-- textbox pour le nombre1 et nombre 2 -->
+    <label for="txtNombre1">Nombre1</label>
+    <input type="text" id="txtNombre1">
+    <label for="txtNombre2">Nombre2</label>
+    <input type="text" id="txtNombre2">
+    <br><br>
+
+    <!-- bouton pour calculer -->
+    <input type="button" id="btnCalcule" onclick="calculeAddition()"  value="+">
+    <input type="button" id="btnCalcule" onclick="calculeSoustraction()"  value="-">
+    <input type="button" id="btnCalcule" onclick="calculeMultiplication()"  value="*">
+    <input type="button" id="btnCalcule" onclick="calculeDivision()"  value="/">
+    <input type="button" id="btnCalcule" onclick="calculeExposant()"  value="^">
+    <input type="button" id="btnCalcule" onclick="calculeModulo()"  value="%">
+    
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche"></div>
+    
+    <script>
+        //fonction pour addition
+        function calculeAddition() {
+            //Chercher les données dans le formulaire
+            var nombre1 = document.getElementById("txtNombre1").value;
+            var nombre2 = document.getElementById("txtNombre2").value;
+
+            var affiche = document.getElementById("divAffiche");
+            
+            //Constuire le message à afficher
+            var message = "<br><br>" + nombre1 + " + " + nombre2 + " = " + (parseInt(nombre1) + parseInt(nombre2));
+            
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+        
+        //fonction pour soustraction
+        function calculeSoustraction() {
+            //Chercher les données dans le formulaire
+            var nombre1 = document.getElementById("txtNombre1").value;
+            var nombre2 = document.getElementById("txtNombre2").value;
+
+            var affiche = document.getElementById("divAffiche");
+            
+            //Constuire le message à afficher
+            var message = "<br><br>" + nombre1 + " - " + nombre2 + " = " + (nombre1-nombre2);
+            
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+        
+        //fonction pour multiplication
+        function calculeMultiplication() {
+            //Chercher les données dans le formulaire
+            var nombre1 = document.getElementById("txtNombre1").value;
+            var nombre2 = document.getElementById("txtNombre2").value;
+
+            var affiche = document.getElementById("divAffiche");
+            
+            //Constuire le message à afficher
+            var message = "<br><br>" + nombre1 + " * " + nombre2 + " = " + (nombre1*nombre2);
+            
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+        
+        //fonction pour division
+        function calculeDivision() {
+            //Chercher les données dans le formulaire
+            var nombre1 = document.getElementById("txtNombre1").value;
+            var nombre2 = document.getElementById("txtNombre2").value;
+
+            var affiche = document.getElementById("divAffiche");
+            
+            //Constuire le message à afficher
+            var message = "<br><br>" + nombre1 + " / " + nombre2 + " = " + (nombre1/nombre2);
+            
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+        
+        //fonction pour exposant
+        function calculeExposant() {
+            //Chercher les données dans le formulaire
+            var nombre1 = document.getElementById("txtNombre1").value;
+            var nombre2 = document.getElementById("txtNombre2").value;
+
+            var affiche = document.getElementById("divAffiche");
+            
+            //Constuire le message à afficher
+            var message = "<br><br>" + nombre1 + " ^ " + nombre2 + " = " + (nombre1**nombre2);
+            
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+        
+        //fonction pour modulo
+        function calculeModulo() {
+            //Chercher les données dans le formulaire
+            var nombre1 = document.getElementById("txtNombre1").value;
+            var nombre2 = document.getElementById("txtNombre2").value;
+
+            var affiche = document.getElementById("divAffiche");
+            
+            //Constuire le message à afficher
+            var message = "<br><br>" + nombre1 + " % " + nombre2 + " = " + (nombre1%nombre2);
+            
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+    </script>
+    
+  </form>
+</body>
+</html>
