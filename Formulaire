@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Questions</title>
+</head>
+<body>
+  <form>
+     <h1>Formulaire d'inscription</h1>
+    
+    <!-- textbox pour le nom de l'élève -->
+    <label for="txtNom">Nom:</label>
+    <input type="text" id="txtNom">
+    <br><br>
+    
+    <!-- radio button pour l'année d'étude secondaire -->
+    <label for="radGrade">Année d'étude:</label>
+    <input type="radio" name="annee" value="9e">9e
+    <input type="radio" name="annee" value="10e">10e
+    <input type="radio" name="annee" value="11e" checked>11e
+    <input type="radio" name="annee" value="12e">12e
+    <br><br>
+
+    <!-- Checkbox pour les langages de  que tu connais -->
+    <label for="chkLangues">Langages de Codages Connus:</label><br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Tu connais JavaScript">JavaScript<br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Tu connais HTML">HTML<br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Tu connais CSS">CSS<br><br>
+
+    <!-- bouton pour soumettre le formulaire -->
+    <input type="button" id="btnSoumet" onclick="soumettreFormulaire()"  value="Soumettre le formulaire">
+    
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche">
+    </div>
+    <script>
+        function soumettreFormulaire() {
+            //Chercher les données dans le formulaire
+            var nom = document.getElementById("txtNom").value;
+            var affiche = document.getElementById("divAffiche");
+            //Pour déterminer lequel des radio buttons est coché
+            var radiosAnnee = document.getElementsByName("annee");
+            //Variable pour stocker l'année choisie
+            var annee = "";
+            for (var i = 0; i < radiosAnnee.length; i++) {
+              if (radiosAnnee[i].checked) {
+                  annee = radiosAnnee[i].value;
+              }
+            }
+            //Pour déterminer lesquels des checkbox sont cochés
+            var checkLangues = document.getElementsByName("langues");
+            var messageCodes = "";
+            for (var i=0; i < checkLangues.length; i++) {
+              if (checkLangues[i].checked) {
+                messageCodes += " " + checkLangues[i].value;
+              }
+            }
+          
+            //Construire le message à afficher
+            var message = "<br><br>Votre nom est: " + nom + ".  " + "Tu es en " + annee + ". " + messageCodes  + ".";
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+    </script>
+  </form>
+</body>
+</html>
